@@ -1,0 +1,32 @@
+{
+  "name": "windsurf-favorite-stashes",
+  "version": "1.0.0",
+  "description": "Windsurf plugin to manage favorite Git stashes",
+  "main": "index.js",
+  "bin": {
+    "favorite-stashes": "./bin/favorite-stashes"
+  },
+  "engines": {
+    "windsurf": "^1.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "mkdir -p dist && cp -r index.js cli.js windsurf.js package.json README.md bin dist/",
+    "postinstall": "node -e \"try { require('fs').chmodSync('./bin/favorite-stashes', '755') } catch (e) {}\""
+  },
+  "keywords": [
+    "windsurf",
+    "plugin",
+    "git",
+    "stash",
+    "favorite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "simple-git": "^3.19.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
